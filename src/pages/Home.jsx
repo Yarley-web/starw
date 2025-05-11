@@ -46,10 +46,10 @@ export const Home = () => {
     loadAllData();
   }, []);
 
-  // Función para verificar si un item es favorito
+  //esta función es para verificar si un item es favorito
   const isFavorite = (url) => favorites.some(fav => fav.url === url);
 
-  // Función para manejar el toggle de favoritos
+  // esta función es para manejar el toggle de favoritos
   const toggleFavorite = (item, type) => {
     const favoriteItem = {
       uid: item.uid,
@@ -65,7 +65,7 @@ export const Home = () => {
     }
   };
 
-  // Renderizar cards
+  // esto es para Renderizar cards
   const renderCards = (items, type) => {
     if (loading) return (
       <div className="text-center my-5">
@@ -85,7 +85,6 @@ export const Home = () => {
     return (
       <Row>
         {items.map((item) => {
-          // Imagen según el tipo
           let imageUrl;
           switch(type) {
             case 'people':

@@ -8,7 +8,7 @@ export const Favorites = () => {
   const navigate = useNavigate();
 
   const handleViewDetails = (fav) => {
-    // Extrae el ID de la URL si no tenemos uid directamente
+    //esto es para extrae el ID de la URL si no tenemos uid directamente
     const id = fav.uid || fav.url.split('/').filter(Boolean).pop();
     
     if (!id) {
@@ -36,7 +36,7 @@ export const Favorites = () => {
       <h2 className="mb-4">Your Favorites</h2>
       <Row>
         {favorites.map((fav) => {
-          // Asegurarnos de tener un ID válido
+          // con esto asegurarnos de tener un ID válido
           const id = fav.uid || fav.url.split('/').filter(Boolean).pop();
           
           return (
@@ -51,7 +51,7 @@ export const Favorites = () => {
                       variant="primary" 
                       size="sm"
                       onClick={() => handleViewDetails(fav)}
-                      disabled={!id} // Deshabilitar si no hay ID
+                      disabled={!id} 
                     >
                       View Details
                     </Button>
