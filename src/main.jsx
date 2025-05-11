@@ -1,5 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { FavoritesProvider } from './context/FavoritesContext';
 import './index.css'  // Global styles for your application
 import { RouterProvider } from "react-router-dom";  // Import RouterProvider to use the router
 import { router } from "./routes";  // Import the router configuration
@@ -10,9 +11,11 @@ const Main = () => {
         <React.StrictMode>  
             {/* Provide global state to all components */}
             <StoreProvider> 
-                {/* Set up routing for the application */} 
-                <RouterProvider router={router}>
-                </RouterProvider>
+                {/* Set up routing for the application */}
+                    <FavoritesProvider> 
+                        <RouterProvider router={router}>
+                        </RouterProvider>
+                    </FavoritesProvider>    
             </StoreProvider>
         </React.StrictMode>
     );
